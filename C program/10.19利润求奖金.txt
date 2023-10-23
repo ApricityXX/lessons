@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+double I,s;
+printf("请输入利润：（单位：万元）");   //输入框 
+scanf("%lf",&I);                        //引入I地址 
+if(I<=10)                               //for循环 
+s=0.1*I;                                //第一部分 
+                                        //第二部分 
+else if(I<=20)
+s=10*0.1+0.075*(I-10);                 
+
+else if(I<=40)                          //第三部分，以此类推 
+s=1.75+0.05*(I-20);	
+
+else if(I<=60)
+s=2.75+0.03*(I-40);
+
+else if(I<=100)
+s=3.35+0.015*(I-60);
+
+else if(I>100)
+s=3.95+0.01*(I-100);
+
+printf("您今年的奖金为：%.2f(单位：万元)",s);//输出奖金 
+return 0;
+}

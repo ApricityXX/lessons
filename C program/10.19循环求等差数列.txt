@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>          //
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+
+int a,b,sum;
+
+printf("请输入两个整数：");
+scanf("%d%d",&a,&b);
+ 
+while(a<=b){
+
+
+sum=sum+a; 
+a=a+1;
+}
+  printf("%d",sum);
+
+
+	return 0;
+}

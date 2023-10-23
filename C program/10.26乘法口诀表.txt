@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+  int i,j;
+  for(i=9;i>=1;i--){             //上三角形式 
+  
+    for(j=1;j<=i;j++)
+       printf("%d*%d=%-4d ",j,i,i*j);//左对齐 
+       printf("\n");
+}
+
+	return 0;
+}  
+
+————————————————————————————————————————————————————————————————————————
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+  int i,j;
+  for(i=1;i<=9;i++){                            //下三角形式输出 
+  
+    for(j=1;j<=i;j++)
+       printf("%d*%d=%-4d ",j,i,i*j);
+       printf("\n");
+}
+
+	return 0;
+}

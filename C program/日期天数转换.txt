@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int judge(int year);
+int date_num(int y,int m,int d);  //三个自定义函数 
+int num_date(int year,int sum);
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+      int main(int argc, char *argv[]) {
+      	int operation;
+      do{
+	  
+      	system("cls");
+      int year,month,day,sum;
+      
+      printf("请输入您的选项：\n");     //菜单选项 
+	  printf("1:日期转换成天数\n");
+	  printf("2:天数转换成日期\n"); 
+	  printf("0:退出\n");
+       fflush(stdin);
+       scanf("%d",&operation);
+       if(operation==1)
+	   {
+	   	printf("请输入 年 月 日：(三个数字)\n");
+		   scanf("%d%d%d",&year,&month,&day);
+		   sum=date_num(year,month,day);
+		   printf ("天数为：%d",sum);
+	   }
+      else
+      {
+      	printf("请输入 年 天数(两个数字)\n");
+      	fflush(stdin);
+		  scanf("%d%d",&year,&sum);
+		  day=num_date(year,sum);
+		  month=day/100,day%=100;
+		  printf("日期为：%d月%d日",month,day);
+		   
+	  }
+	  getchar();
+      system("pause");
+  }while(operation!=0);
+	return 0;
+}
+
+
+	int judge(int year){                     //第一个自定义函数：判断是否闰年。 
+		if((year%4==0&&year%100!=0)||(year%400==0))
+		return 1;
+		else
+		return 0;
+	}
+	
+	
+	
+	int date_num(int y,int m,int d)    {         //第二个自定义函数，即日期转换成天数。 
+	int sum=0;
+	for(int i=1;i<m;i++)
+	{
+		if(i==4||i==6||i==9||i==11)
+		sum+=30;
+		else if(i==2)
+		{
+		  if(judge(y)==0)
+		   sum+=28;
+		   else
+		   sum+=29;
+		}
+        else
+           sum+=31;
+       }
+      sum+=d;
+      
+      return sum;
+  }
+      
+      
+      int num_date(int year,int sum)             //第三个自定义函数，即天数转换成日期 
+      {
+      	  int i=1,j,t,d;
+      	  while(sum>0)
+      	  {
+      	  	if(i==4||i==6||i==9||i==11)
+      	  	{
+      	  		sum-=30;
+      	  		t=30;
+				}
+      	  	else if(i==2)
+      	  	{
+      	  		if(judge(year)==0)
+      	  		{
+      	  			sum-=28;
+      	  			t=28;
+					}
+      	  		else
+      	  		sum-=29;
+      	  		t=29;
+				}
+				else{
+					sum-=31;
+					t=31;
+				}
+				i+=1;
+			}
+      	         if(sum==0)
+				   {
+				   	j=t;
+				   }
+				   else
+				   {  
+				      j=sum+t;
+				      i--;
+				   }
+				   d=i*100+j;
+				   return d;
+	  }

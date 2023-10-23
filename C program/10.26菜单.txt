@@ -1,0 +1,63 @@
+	#include <stdlib.h>
+#include <stdio.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+  
+  int n,m=0;
+     do{
+	 system("cls");                     //输入后清空 
+	 printf("1:getMax()\n");            //菜单内容1 
+     printf("2:RANK()\n");              //菜单内容2 
+     printf("3:name()\n");              //以此类推 
+     printf("4:solve()\n");
+     printf("5:菜单()\n");
+     printf("0:退出()\n");
+     printf("请输入您要选择的序号："); 
+     fflush(stdin);
+        scanf("%d",&n);
+        switch(n){                       //swtich语句，控制菜单内容的输出 
+        case 1:                           //case1  
+        	printf("1:getMax()\n");        
+        	printf("按回车键继续");
+        	fflush(stdin);
+        	getchar();
+		break;                             //case1的结束，break! 
+		case 2:                           //case2
+			printf("2:RANK()\n");
+        	printf("按回车键继续"); 
+        	fflush(stdin);
+        	getchar();
+		break;
+		case 3:                             //以此类推，控制菜单中的内容 
+			printf("3:name()\n");
+        	printf("按回车键继续");
+        	fflush(stdin);
+        	getchar();
+		break;	
+		case 4:
+			printf("4:solve()\n");
+        	printf("按回车键继续");
+        	fflush(stdin);
+        	getchar();
+		break;
+		case 5:
+				printf("5:菜单()\n");
+        	printf("按回车键继续");
+        	fflush(stdin);
+        	getchar();
+		break;
+		case 0:                                //case 0为空语句 
+		break;
+	
+		default:                               //default语句，排除出输入的范围之外的数字。 
+			printf("输入有误"); 
+			fflush(stdin);
+			getchar();
+		break;
+}
+         
+		}while(0!=n);                          // do while 循环的条件！ 
+
+	return 0;
+}

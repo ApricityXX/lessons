@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(int argc, char *argv[]) {
+	
+	int n,sum=1;                              //定义n,sum为整型变量，且sum初值为1. 
+	printf("请输入一个正整数：");
+	scanf("%d",&n);                           //取n的地址 
+	if(n>=1){                                  //判定条件，即n是否为正数 
+	
+	for(n;n>=1;n--){                           //循环条件，即从n到1 
+		            
+		sum=sum*n;	                           //每次乘n-1的值 		
+	} 
+	printf("%d",sum);                          //输出sum的值
+}
+         
+	else{                                      //判定为F 的执行语句 
+		printf("输入错误\n");
+	} 
+	
+	
+	
+	return 0;
+	
+}

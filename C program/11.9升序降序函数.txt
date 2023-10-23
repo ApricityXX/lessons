@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+double a,b,c,n;
+int m;
+void sort_down();
+void sort_up();
+
+
+int main(int argc, char *argv[]) {
+	
+	printf("1:升序\n");
+    printf("2:降序\n");
+	printf("请输入数字选项：\n");
+	scanf("%d",&m);
+	if(m==1){
+	printf("请输入三个数字：\n");
+	scanf("%lf%lf%lf",&a,&b,&c);
+	sort_up();
+	
+}
+	else if (m==2){
+	
+	printf("请输入三个数字：\n");
+	scanf("%lf%lf%lf",&a,&b,&c);
+	sort_down();
+	
+}
+	return 0;
+	
+}
+
+
+void sort_up(){
+
+	if(a>b){
+	n=b;
+	b=a;
+	a=n;
+}
+	if(a>c){
+		n=c;
+		c=a;
+		a=n;
+	}
+	if(b>c){
+		n=c;
+		c=b;
+		b=n;	
+	}
+	printf("%lf %lf %lf ",a,b,c);
+	return;
+}
+
+void sort_down(){
+	
+if(a>b){
+	n=b;
+	b=a;
+	a=n;
+}
+	if(a>c){
+		n=c;
+		c=a;
+		a=n;
+	}
+	if(b>c){
+		n=c;
+		c=b;
+		b=n;	
+	}
+	printf("%lf %lf %lf ",c,b,a);
+	return;
+}
+ 
+
+

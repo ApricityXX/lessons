@@ -1,0 +1,18 @@
+#inclu#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+	
+	double a=0.5,sum=0;                //定义每个棋盘的麦粒a以及总数sum  
+	double V;                        //定义体积V 
+	for (int i=1;i<=64;i++){         //循环语句，循环64次即可 
+	a=a*2;                           //每次是上次的两倍 
+	sum=sum+a;}                      //总数每次加棋盘麦粒 
+	 
+	V=sum/1.40e8;                    //体积和麦粒数的转换 
+	printf("国王要给达依尔%.2lf立方米小麦",V);//输出V 
+
+	return 0;
+}
